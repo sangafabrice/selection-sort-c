@@ -1,0 +1,20 @@
+#include "sort/selection.h"
+
+int main(int argc, char *argv[])
+{
+    if (argc == 1)
+    {
+        return EXIT_FAILURE;
+    }
+
+    input_size_t n = argc - 1;
+    number_t A[n];
+
+    parse_numbers(argv + 1, A);
+
+    selection_sort(A, n);
+
+    print_numbers(A, n);
+
+    return EXIT_SUCCESS;
+}
