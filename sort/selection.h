@@ -2,14 +2,12 @@
 
 index_t minimum_index(number_t A[], input_size_t n, index_t s)
 {
-    number_t min = A[s];
     index_t minindex = s;
 
     for (index_t i = s + 1; i <= n - 1; i++)
     {
-        if (min > A[i])
+        if (A[minindex] > A[i])
         {
-            min = A[i];
             minindex = i;
         }
     }
