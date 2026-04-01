@@ -26,7 +26,7 @@ void swap(number_t A[], index_t s, index_t i)
 
 void selection_sort(number_t A[], input_size_t n)
 {
-    for (index_t s = 0; s <= n - 2; s++)
+    for (index_t s = 0; 2 <= n - s; s++)
     {
         index_t minindex = minimum_index(A, n, s);
         swap(A, s, minindex);
