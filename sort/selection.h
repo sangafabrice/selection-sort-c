@@ -4,11 +4,11 @@ number_t *minimum_ptr(number_t A[], input_size_t n, index_t s)
 {
     number_t *minptr = A + s;
 
-    for (index_t i = s + 1; i < n; i++)
+    while (++s < n)
     {
-        if (*minptr > A[i])
+        if (*minptr > A[s])
         {
-            minptr = A + i;
+            minptr = A + s;
         }
     }
 
