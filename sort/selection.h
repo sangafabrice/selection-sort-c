@@ -17,11 +17,11 @@ index_t minimum_index(number_t A[], input_size_t n, index_t s)
     return minindex;
 }
 
-void swap(number_t A[], index_t s, index_t i)
+void swap(number_t *first, number_t *min)
 {
-    number_t temp = A[s];
-    A[s] = A[i];
-    A[i] = temp;
+    number_t temp = *first;
+    *first = *min;
+    *min = temp;
 }
 
 void selection_sort(number_t A[], input_size_t n)
@@ -32,7 +32,7 @@ void selection_sort(number_t A[], input_size_t n)
         
         if (s != minindex)
         {
-            swap(A, s, minindex);
+            swap(&A[s], &A[minindex]);
         }
     }
 }
