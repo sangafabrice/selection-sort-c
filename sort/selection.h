@@ -1,6 +1,6 @@
 #include "numio.h"
 
-index_t minimum_index(number_t A[], input_size_t n, index_t s)
+number_t *minimum_index(number_t A[], input_size_t n, index_t s)
 {
     index_t minindex = s;
 
@@ -12,7 +12,7 @@ index_t minimum_index(number_t A[], input_size_t n, index_t s)
         }
     }
 
-    return minindex;
+    return A + minindex;
 }
 
 void swap(number_t *first, number_t *min)
@@ -26,11 +26,11 @@ void selection_sort(number_t A[], input_size_t n)
 {
     for (index_t s = 0; 1 < n - s; s++)
     {
-        index_t minindex = minimum_index(A, n, s);
+        number_t *minptr = minimum_index(A, n, s);
         
-        if (s != minindex)
+        if (A + s != minptr)
         {
-            swap(&A[s], &A[minindex]);
+            swap(&A[s], minptr);
         }
     }
 }
