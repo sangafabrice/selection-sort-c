@@ -22,12 +22,11 @@ void swap(number_t *first, number_t *min)
     *min = temp;
 }
 
-void selection_sort(number_t A[], input_size_t n)
+void selection_sort(number_t A[], number_t *lastptr)
 {
-    for (index_t s = 0; 1 < n - s; s++)
+    for (number_t *firstptr = A; firstptr <= lastptr - 1; firstptr++)
     {
-        number_t *firstptr = &A[s];
-        number_t *minptr = minimum_ptr(firstptr, &A[n-1]);
+        number_t *minptr = minimum_ptr(firstptr, lastptr);
 
         if (firstptr != minptr)
         {
