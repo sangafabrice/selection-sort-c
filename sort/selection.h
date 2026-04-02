@@ -28,11 +28,12 @@ void selection_sort(number_t A[], input_size_t n)
 {
     for (index_t s = 0; 1 < n - s; s++)
     {
-        number_t *minptr = minimum_ptr(A + s, n - s);
-        
-        if (A + s != minptr)
+        number_t *firstptr = A + s;
+        number_t *minptr = minimum_ptr(firstptr, n - s);
+
+        if (firstptr != minptr)
         {
-            swap(&A[s], minptr);
+            swap(firstptr, minptr);
         }
     }
 }
