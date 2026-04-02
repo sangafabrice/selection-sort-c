@@ -1,10 +1,10 @@
 #include "numio.h"
 
-number_t *minimum_ptr(number_t A[], number_t *sentinelptr)
+number_t *minimum_ptr(number_t A[], number_t *lastptr)
 {
     number_t *minptr = A;
 
-    while (++A != sentinelptr)
+    while (++A <= lastptr)
     {
         if (*minptr > *A)
         {
@@ -27,7 +27,7 @@ void selection_sort(number_t A[], input_size_t n)
     for (index_t s = 0; 1 < n - s; s++)
     {
         number_t *firstptr = &A[s];
-        number_t *minptr = minimum_ptr(firstptr, &A[n]);
+        number_t *minptr = minimum_ptr(firstptr, &A[n-1]);
 
         if (firstptr != minptr)
         {
