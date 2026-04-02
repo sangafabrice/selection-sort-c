@@ -24,7 +24,7 @@ void swap(number_t *first, number_t *min)
 
 void selection_sort(number_t A[], number_t *lastptr)
 {
-    for (number_t *firstptr = A; firstptr <= lastptr - 1; firstptr++)
+    for (number_t *firstptr = A; firstptr < lastptr; firstptr++)
     {
         number_t *minptr = minimum_ptr(firstptr, lastptr);
 
