@@ -1,25 +1,25 @@
 #include "numio.h"
 
-number_t *minimum_ptr(number_t A[], number_t *lastptr)
+number_t *minimum_ptr(number_t *firstptr, number_t *lastptr)
 {
-    number_t *minptr = A;
+    number_t *minptr = firstptr;
 
-    while (++A <= lastptr)
+    while (++firstptr <= lastptr)
     {
-        if (*minptr > *A)
+        if (*minptr > *firstptr)
         {
-            minptr = A;
+            minptr = firstptr;
         }
     }
 
     return minptr;
 }
 
-void swap(number_t *first, number_t *min)
+void swap(number_t *firstptr, number_t *minptr)
 {
-    number_t temp = *first;
-    *first = *min;
-    *min = temp;
+    number_t temp = *firstptr;
+    *firstptr = *minptr;
+    *minptr = temp;
 }
 
 void selection_sort(number_t A[], number_t *lastptr)
