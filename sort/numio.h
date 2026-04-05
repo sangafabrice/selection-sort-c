@@ -7,24 +7,24 @@ typedef unsigned index_t;
 typedef long number_t;
 typedef unsigned input_size_t;
 
-void parse_numbers(char *argv[], number_t A[], input_size_t *n)
+void parse_numbers(char *argv[], number_t *firstptr, number_t **lastptr)
 {
     char *endptr;
 
-    for (index_t i = 0; *argv != NULL; argv++)
+    while (*argv != NULL)
     {
-        char *argstr = *argv;
+        char *argstr = *(argv++);
 
         errno = 0;
         number_t a = strtol(argstr, &endptr, 10);
 
         if (*endptr == '\0' && !(errno == ERANGE && (a == LONG_MAX || a == LONG_MIN)))
         {
-            A[i++] = a;
+            *firstptr = a;
+            *lastptr = firstptr++;
         }
         else
         {
-            (*n)--;
             fprintf(stderr, "\x1b[93mThe argument '%s' is ignored.\x1b[0m\n", argstr);
         }
     }
@@ -32,10 +32,10 @@ void parse_numbers(char *argv[], number_t A[], input_size_t *n)
     errno = 0;
 }
 
-void print_numbers(number_t A[], input_size_t n)
+void print_numbers(number_t *firstptr, number_t *lastptr)
 {
-    for (index_t i = 0; i < n; i++)
+    while (firstptr <= lastptr)
     {
-        printf("%ld ", A[i]);
+        printf("%ld ", *(firstptr++));
     }
 }

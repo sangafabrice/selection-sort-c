@@ -2,24 +2,18 @@
 
 int main(int argc, char *argv[])
 {
-    if (argc == 1)
+    number_t *first, *last;
+
+    parse_numbers(&argv[1], first, &last);
+
+    if (last == NULL)
     {
         return EXIT_FAILURE;
     }
 
-    input_size_t n = argc - 1;
-    number_t A[n];
+    selection_sort(first, last);
 
-    parse_numbers(&argv[1], A, &n);
-
-    if (n == 0)
-    {
-        return EXIT_FAILURE;
-    }
-
-    selection_sort(A, &A[n-1]);
-
-    print_numbers(A, n);
+    print_numbers(first, last);
 
     return EXIT_SUCCESS;
 }
