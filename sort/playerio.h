@@ -28,8 +28,8 @@ void parse_players(char *argv[], player_t *firstptr, player_t **lastptr)
 
         if (*endptr == '\0' && !(errno == ERANGE && (a == LONG_MAX || a == LONG_MIN)))
         {
-            (*firstptr).name = namestr;
-            (*firstptr).caps = a;
+            firstptr->name = namestr;
+            firstptr->caps = a;
             *lastptr = firstptr++;
         }
         else
@@ -45,6 +45,6 @@ void print_players(player_t *firstptr, player_t *lastptr)
 {
     while (firstptr <= lastptr)
     {
-        printf("%s:\t%ld\n", (*firstptr++).name, (*firstptr).caps);
+        printf("%s:\t%ld\n", (firstptr++)->name, firstptr->caps);
     }
 }

@@ -6,7 +6,7 @@ player_t *minimum_ptr(player_t *firstptr, player_t *lastptr)
 
     while (++firstptr <= lastptr)
     {
-        if ((*minptr).caps > (*firstptr).caps)
+        if (minptr->caps > firstptr->caps)
         {
             minptr = firstptr;
         }
