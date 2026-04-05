@@ -1,12 +1,12 @@
-#include "numio.h"
+#include "playerio.h"
 
-number_t *minimum_ptr(number_t *firstptr, number_t *lastptr)
+player_t *minimum_ptr(player_t *firstptr, player_t *lastptr)
 {
-    number_t *minptr = firstptr;
+    player_t *minptr = firstptr;
 
     while (++firstptr <= lastptr)
     {
-        if (*minptr > *firstptr)
+        if ((*minptr).caps > (*firstptr).caps)
         {
             minptr = firstptr;
         }
@@ -15,18 +15,18 @@ number_t *minimum_ptr(number_t *firstptr, number_t *lastptr)
     return minptr;
 }
 
-void swap(number_t *firstptr, number_t *minptr)
+void swap(player_t *firstptr, player_t *minptr)
 {
-    number_t temp = *firstptr;
+    player_t temp = *firstptr;
     *firstptr = *minptr;
     *minptr = temp;
 }
 
-void selection_sort(number_t *firstptr, number_t *lastptr)
+void selection_sort(player_t *firstptr, player_t *lastptr)
 {
     while (firstptr < lastptr)
     {
-        number_t *minptr = minimum_ptr(firstptr, lastptr);
+        player_t *minptr = minimum_ptr(firstptr, lastptr);
         swap(firstptr++, minptr);
     }
 }

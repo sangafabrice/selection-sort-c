@@ -2,9 +2,9 @@
 
 int main(int argc, char *argv[])
 {
-    number_t *first, *last;
+    player_t *first, *last;
 
-    parse_numbers(&argv[1], first, &last);
+    parse_players(&argv[1], first, &last);
 
     if (last == NULL)
     {
@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
     selection_sort(first, last);
 
-    print_numbers(first, last);
+    print_players(first, last);
 
     return EXIT_SUCCESS;
 }
