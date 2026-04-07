@@ -1,3 +1,4 @@
+#include "consoletime.h"
 #include "numio.h"
 
 number_t *minimum_ptr(number_t *firstptr, number_t *lastptr)
@@ -24,9 +25,13 @@ void swap(number_t *firstptr, number_t *minptr)
 
 void selection_sort(number_t *firstptr, number_t *lastptr)
 {
+    console_time("selection sort");
+
     while (firstptr < lastptr)
     {
         number_t *minptr = minimum_ptr(firstptr, lastptr);
         swap(firstptr++, minptr);
     }
+
+    console_timeEnd("selection sort");
 }
