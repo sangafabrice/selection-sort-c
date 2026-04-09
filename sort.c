@@ -2,11 +2,11 @@
 
 int main(int argc, char *argv[])
 {
-    player_t *first, *last;
+    player_t first[argc], *last = NULL;
 
     parse_players(&argv[1], first, &last);
 
-    if (last == NULL)
+    if (!last)
     {
         return EXIT_FAILURE;
     }

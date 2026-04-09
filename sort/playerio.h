@@ -16,7 +16,7 @@ struct player_t
 
 void parse_players(char *argv[], player_t *firstptr, player_t **lastptr)
 {
-    char *endptr;
+    char *endptr = NULL;
 
     while (*argv != NULL)
     {
