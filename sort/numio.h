@@ -16,7 +16,7 @@ void parse_numbers(char *argv[], number_t *firstptr, number_t **lastptr)
         char *argstr = *(argv++);
 
         errno = 0;
-        number_t a = strtol(argstr, &endptr, 10);
+        auto a = strtol(argstr, &endptr, 10);
 
         if (*endptr == '\0' && !(errno == ERANGE && (a == LONG_MAX || a == LONG_MIN)))
         {

@@ -2,7 +2,7 @@
 
 number_t *minimum_ptr(number_t *firstptr, number_t *lastptr)
 {
-    number_t *minptr = firstptr;
+    auto minptr = firstptr;
 
     while (++firstptr <= lastptr)
     {
@@ -17,7 +17,7 @@ number_t *minimum_ptr(number_t *firstptr, number_t *lastptr)
 
 void swap(number_t *firstptr, number_t *minptr)
 {
-    number_t temp = *firstptr;
+    auto temp = *firstptr;
     *firstptr = *minptr;
     *minptr = temp;
 }
@@ -26,7 +26,7 @@ void selection_sort(number_t *firstptr, number_t *lastptr)
 {
     while (firstptr < lastptr)
     {
-        number_t *minptr = minimum_ptr(firstptr, lastptr);
+        auto minptr = minimum_ptr(firstptr, lastptr);
         swap(firstptr++, minptr);
     }
 }
