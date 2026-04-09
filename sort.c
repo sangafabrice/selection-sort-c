@@ -2,11 +2,11 @@
 
 int main(int argc, char *argv[])
 {
-    number_t first[argc], *last;
+    number_t first[argc], *last = NULL;
 
     parse_numbers(&argv[1], first, &last);
 
-    if (last == NULL)
+    if (!last)
     {
         return EXIT_FAILURE;
     }
