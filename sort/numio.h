@@ -9,7 +9,7 @@ typedef unsigned input_size_t;
 
 void parse_numbers(char *argv[], number_t *firstptr, number_t **lastptr)
 {
-    char *endptr = NULL;
+    char *endptr = nullptr;
 
     while (*argv != NULL)
     {

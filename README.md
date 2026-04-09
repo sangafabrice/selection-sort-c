@@ -3,7 +3,7 @@
 Using the GNU Compiler Collection (GCC).
 
 ```bash
-$ gcc -o selection_sort sort.c
+$ gcc -std=c2x -o selection_sort sort.c
 ```
 
 #### Execute

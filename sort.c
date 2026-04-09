@@ -2,7 +2,7 @@
 
 int main(int argc, char *argv[])
 {
-    number_t first[argc], *last = NULL;
+    number_t first[argc], *last = nullptr;
 
     parse_numbers(&argv[1], first, &last);
 
