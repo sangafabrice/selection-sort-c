@@ -7,9 +7,7 @@ int main(int argc, char *argv[])
     parse_numbers(&argv[1], first, &last);
 
     if (!last)
-    {
         return EXIT_FAILURE;
-    }
 
     selection_sort(first, last);
 

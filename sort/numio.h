@@ -24,9 +24,7 @@ void parse_numbers(char *argv[], number_t *firstptr, number_t **lastptr)
             *lastptr = firstptr++;
         }
         else
-        {
             fprintf(stderr, "\x1b[93mThe argument '%s' is ignored.\x1b[0m\n", argstr);
-        }
     }
 
     errno = 0;
@@ -35,7 +33,5 @@ void parse_numbers(char *argv[], number_t *firstptr, number_t **lastptr)
 void print_numbers(number_t *firstptr, number_t *lastptr)
 {
     while (firstptr <= lastptr)
-    {
         printf("%ld ", *(firstptr++));
-    }
 }
